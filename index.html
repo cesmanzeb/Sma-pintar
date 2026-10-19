@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMA Pintar</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fc;color:#172554}
+header{background:#123b80;color:white;padding:22px 18px;border-radius:0 0 24px 24px}
+.brand{font-size:24px;font-weight:bold}
+header p{color:#dbeafe;margin-bottom:0}
+main{max-width:650px;margin:auto;padding:18px}
+h2{font-size:19px}
+.welcome{background:linear-gradient(135deg,#2563eb,#123b80);color:white;padding:22px;border-radius:18px;margin-bottom:20px}
+.welcome h2{font-size:23px;margin-top:0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:white;border-radius:15px;padding:18px 14px;box-shadow:0 3px 12px #0f172a0b}
+.emoji{font-size:28px}
+.card h3{font-size:15px;margin-bottom:7px}
+.card p{font-size:12px;color:#64748b;line-height:1.5}
+button{border:0;border-radius:10px;padding:12px;background:#2563eb;color:white;font-weight:bold;width:100%;cursor:pointer}
+.login{margin-top:22px;background:white;border-radius:16px;padding:20px}
+input,select{width:100%;padding:13px;margin:7px 0 13px;border:1px solid #cbd5e1;border-radius:9px;background:white}
+#message{font-size:13px;color:#b91c1c;line-height:1.5}
+footer{text-align:center;color:#64748b;padding:25px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🎓 SMA Pintar</div>
+  <p>Platform belajar digital sekolah</p>
+</header>
+<main>
+  <section class="welcome">
+    <h2>Belajar Lebih Mudah!</h2>
+    <p>Temukan materi, tugas, jadwal, dan informasi sekolah dalam satu tempat.</p>
+    <button onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'})">
+      Mulai Belajar
+    </button>
+  </section>
+
+  <h2>Fitur SMA Pintar</h2>
+  <section class="cards">
+    <div class="card"><div class="emoji">📚</div><h3>Buku Digital</h3><p>Akses materi dan buku pelajaran PDF.</p></div>
+    <div class="card"><div class="emoji">📝</div><h3>Tugas Sekolah</h3><p>Lihat tugas dan petunjuk dari guru.</p></div>
+    <div class="card"><div class="emoji">📅</div><h3>Jadwal Pelajaran</h3><p>Periksa jadwal kegiatan belajar.</p></div>
+    <div class="card"><div class="emoji">📊</div><h3>Nilai Siswa</h3><p>Pantau hasil belajar siswa.</p></div>
+    <div class="card"><div class="emoji">📢</div><h3>Pengumuman</h3><p>Baca informasi terbaru dari sekolah.</p></div>
+    <div class="card"><div class="emoji">👩‍🏫</div><h3>Ruang Guru</h3><p>Area khusus untuk kegiatan guru.</p></div>
+  </section>
+
+  <section class="login" id="login">
+    <h2>Masuk ke SMA Pintar</h2>
+    <p>Silakan pilih jenis akun untuk melanjutkan.</p>
+    <form id="loginForm">
+      <label for="role">Jenis akun</label>
+      <select id="role">
+        <option value="siswa">Siswa</option>
+        <option value="guru">Guru</option>
+      </select>
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="nama@email.com" required>
+      <label for="password">Kata sandi</label>
+      <input id="password" type="password" placeholder="Masukkan kata sandi" required>
+      <button type="submit">Masuk</button>
+      <p id="message">Tampilan login ini belum terhubung ke sistem akun. Kita akan membuat backend dan database pada tahap berikutnya.</p>
+    </form>
+  </section>
+</main>
+<footer>© 2026 SMA Pintar · Pendidikan untuk masa depan</footer>
+<script>
+document.getElementById('loginForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('message').textContent=
+    'Tampilan berhasil diuji. Login belum aktif karena backend belum dipasang.';
+});
+</script>
+</body>
+</html>
